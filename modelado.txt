@@ -1,0 +1,49 @@
+Clases posibles con herencias
+
+
+Personaje: Daño_de_personaje, vida_restante, metodo_atacar(aquienAtaca, ataque, )
+    Guerrero:
+        Amazona:
+        Barbaro:
+    Magos:
+        Nigromante:
+        Elementalista:
+    Picaro:
+        Asesino:
+        Ladron:
+    Clerigo:
+        Monje:
+        Sacerdote:
+
+Escenario:
+    Nevado:
+    Desertico:
+    Maritimo:
+    Boscoso:
+
+Inventario:
+    Pequeño:
+    Mediano:
+    Grande:
+
+Habilidades
+    Física:
+    Mágica:
+
+Objetos:
+    Equipamiento:
+    Armas:
+    Pociones:
+        Curacion:
+        Maná:
+        Resistencia:
+
+Stats:
+-Vida:
+-Fuerza:
+-Resistencia:
+-Magia:
+
+
+
+
