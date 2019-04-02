@@ -17,9 +17,8 @@ Habilidad <|-- Magia
 Objeto <|-- Arma
 Objeto <|-- Equipamiento
 Objeto <|-- Pocion
-
-Pocion <|-- Pocion_mana
-Pocion <|-- Pocion_vida
+Objeto <|-- Pocion_mana
+Objeto <|-- Pocion_vida
 
 abstract Personaje {
     Number nivel
@@ -74,7 +73,7 @@ class Pocion_vida{
 }
 abstract Habilidad{
     String nombre
-    String daño
+    String danyo
 }
 class Magia{
     Number coste_mana
