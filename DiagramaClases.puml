@@ -1,0 +1,88 @@
+@startuml DiagramaClases
+
+Personaje "1" *--- "1" Inventario : inventario >
+Guerrero "1" .--- "0..*" Fisica: habilidades >
+Mago "1" .--- "0..*" Magia: habilidades >
+Asesino "1" .--- "0..*" Subterfujio: habilidades >
+Inventario "1" .--- "0..huecos" Objeto: objetos >
+
+Personaje <|-- Guerrero
+Personaje <|-- Mago
+Personaje <|-- Asesino
+
+Habilidad <|-- Fisica
+Habilidad <|-- Subterfujio
+Habilidad <|-- Magia
+
+Objeto <|-- Arma
+Objeto <|-- Equipamiento
+Objeto <|-- Pocion
+
+Pocion <|-- Pocion_mana
+Pocion <|-- Pocion_vida
+
+abstract Personaje {
+    Number nivel
+    Number porcentaje_de_nivel
+    Number vida_restante
+    Number vida
+    Number armadura
+    Number elo
+}
+class Guerrero{
+    Number furia_total
+    Number furia_restante
+    Number atacar(personajeObjetivo, habilidad)
+    modificar_vida(cantidad)
+    modificar_furia(cantidad)
+}
+class Mago{
+    Number mana_total
+    Number mana_restante
+    Number atacar(personajeObjetivo, habilidad)
+    modificar_vida(cantidad)
+    modificar_mana(cantidad)
+}
+class Asesino{
+    Number energia_total
+    Number energia_restante
+    Number atacar(personaje_objetivo, habilidad)
+    modificar_vida(cantidad)
+    modificar_energia(cantidad)
+}
+abstract Objeto{
+    String nombre
+    Number precio
+    Number peso
+}
+class Inventario{
+    Number huecos
+    Number peso_maximo
+    introducir_objetos(objeto)
+}
+class Equipamiento{
+    Number armadura
+}
+class Arma{
+    Number danyo
+}
+class Pocion_mana{
+    Number mana
+}
+class Pocion_vida{
+    Number vida
+}
+abstract Habilidad{
+    String nombre
+    String daño
+}
+class Magia{
+    Number coste_mana
+}
+class Fisica{
+    Number coste_furia
+}
+class Subterfujio{
+    Number coste_energia
+}
+@enduml
