@@ -84,4 +84,4 @@ class Fisica{
 class Subterfujio{
     Number coste_energia
 }
-@enduml<
+@enduml
