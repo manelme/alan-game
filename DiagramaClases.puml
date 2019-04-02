@@ -1,10 +1,10 @@
 @startuml DiagramaClases
 
 Personaje "1" *--- "1" Inventario : inventario >
-Guerrero "1" .--- "0..*" Fisica: habilidades >
-Mago "1" .--- "0..*" Magia: habilidades >
-Asesino "1" .--- "0..*" Subterfujio: habilidades >
-Inventario "1" .--- "0..huecos" Objeto: objetos >
+Guerrero "1" o--- "0..*" Fisica: habilidades >
+Mago "1" o--- "0..*" Magia: habilidades >
+Asesino "1" o--- "0..*" Subterfujio: habilidades >
+Inventario "1" o--- "0..huecos" Objeto: objetos >
 
 Personaje <|-- Guerrero
 Personaje <|-- Mago
@@ -85,4 +85,4 @@ class Fisica{
 class Subterfujio{
     Number coste_energia
 }
-@enduml
+@enduml<
