@@ -1,16 +1,15 @@
 # coding: utf-8
 from personaje import Personaje
-from fisica import Fisica
+from subterfujio import Subterfujio
 
-class Guerrero(Personaje):
+class Asesino(Personaje):
 
     def __init__(self, nombre):
-        super().__init__(nombre, vida_total = 100, vida_restante = 100)
-        self.furia_total = 100
-        self.furia_restante = 100
-        self.habilidades=[]
-
-
+        super().__init__(nombre, vida_total = 70, vida_restante = 70)
+        self.energia_total = 100
+        self.energia_restante = 100
+        self.habilidades = []
+    
     def modificar_vida(self, cantidad):
         try:
             self.vida_restante += cantidad
@@ -31,38 +30,38 @@ class Guerrero(Personaje):
         except:
             pass
 
-    def modificar_furia(self, cantidad):
+    def modificar_energia(self, cantidad):
         try:
-            self.furia_restante += cantidad
-            if self.furia_restante <= 0:
-                self.furia_restante = 0
-                raise Exception("No queda furia")
-            if self.furia_restante > self.furia_total:
-                self.furia_restante = self.furia_total
+            self.energia_restante += cantidad
+            if self.energia_restante <= 0:
+                self.energia_restante = 0
+                raise Exception("No queda energia")
+            if self.energia_restante > self.energia_total:
+                self.energia_restante = self.energia_total
         except:
             pass
 
-    def modificar_furia_total(self, cantidad):
+    def modificar_energia_total(self, cantidad):
         try:
-            self.furia_total += cantidad
-            if self.furia_total <= 0:
-                self.furia_total = 0
-                raise Exception("No queda furia")
+            self.energia_total += cantidad
+            if self.energia_total <= 0:
+                self.energia_total = 0
+                raise Exception("No queda energia")
         except:
             pass
 
     def add_habilidad(self, habilidad):
         try:
-            if type(habilidad) is not Fisica:
-                raise Exception("La habilidad tiene que ser de tipo fisica")
+            if type(habilidad) is not Subterfujio:
+                raise Exception("La habilidad tiene que ser de tipo subterfujio")
             self.habilidades.append(habilidad)
         except:
             pass
-    
+
     def atacar(self, personaje, habilidad):
         try:
-            if self.furia_restante < hablidad.coste_furia:
-                raise Exception("No tienes suficiente furia")
+            if self.energia_restante < hablidad.coste_energia:
+                raise Exception("No tienes suficiente energia")
             personaje.modificar_vida(-habilidad.danyo)
             self.modificar_furia(-habilidad.coste_furia)
         except:
