@@ -17,8 +17,8 @@ class Guerrero(Personaje):
             if self.vida_restante <= 0:
                 self.vida_restante = 0
                 raise Exception("El personaje a muerto")
-            except:
-                pass
+        except:
+            pass
     
     def modificar_vida_total(self, cantidad):
         self.vida_total += cantidad
@@ -33,7 +33,7 @@ class Guerrero(Personaje):
         try:
             if type(habilidad) is not Fisica:
                 raise Exception("La habilidad tiene que ser de tipo fisica")
-            self.habilidades.(habilidad)
+            self.habilidades(habilidad)
         except:
             pass
     def atacar(personaje, habilidad):
