@@ -20,36 +20,44 @@ Objeto <|-- Pocion
 Objeto <|-- Pocion_mana
 Objeto <|-- Pocion_vida
 
-abstract Personaje {
+class Personaje {
     Number nivel
     Number porcentaje_de_nivel
     Number vida_restante
-    Number vida
-    Number armadura
+    Number vida_total
     Number elo
 }
 class Guerrero{
     Number furia_total
     Number furia_restante
-    Number atacar(personajeObjetivo, habilidad)
+    atacar(personaje_objetivo, habilidad)
     modificar_vida(cantidad)
+    modificar_vida_total(cantidad)
     modificar_furia(cantidad)
+    modificar_furia_total(cantidad)
+    add_habilidad(habilidad)
 }
 class Mago{
     Number mana_total
     Number mana_restante
-    Number atacar(personajeObjetivo, habilidad)
+    atacar(personaje_objetivo, habilidad)
     modificar_vida(cantidad)
+    modificar_vida_total(cantidad)
     modificar_mana(cantidad)
+    modificar_mana_total(cantidad)
+    add_habilidad(habilidad)
 }
 class Asesino{
     Number energia_total
     Number energia_restante
-    Number atacar(personaje_objetivo, habilidad)
+    atacar(personaje_objetivo, habilidad)
     modificar_vida(cantidad)
+    modificar_vida_total(cantidad)
     modificar_energia(cantidad)
+    modificar_energia_total(cantidad)
+    add_habilidad(habilidad)
 }
-abstract Objeto{
+class Objeto{
     String nombre
     Number precio
     Number peso
@@ -71,7 +79,7 @@ class Pocion_mana{
 class Pocion_vida{
     Number vida
 }
-abstract Habilidad{
+class Habilidad{
     String nombre
     String danyo
 }
