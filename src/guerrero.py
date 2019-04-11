@@ -33,9 +33,10 @@ class Guerrero(Personaje):
         try:
             if type(habilidad) is not Fisica:
                 raise Exception("La habilidad tiene que ser de tipo fisica")
-            self.habilidades(habilidad)
+            self.habilidades.append(habilidad)
         except:
             pass
+    
     def atacar(personaje, habilidad):
         try:
             if self.furia_restante < hablidad.coste_furia:
