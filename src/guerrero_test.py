@@ -30,12 +30,16 @@ class Guerrero_test(unittest.TestCase):
     def test_comprobar_furia(self):
         self.guerreroA.modificar_furia_total(50)
         self.assertEqual(self.guerreroA.furia_total, 150)
+
         self.guerreroA.modificar_furia(30)
         self.assertEqual(self.guerreroA.furia_restante, 130)
+
         self.guerreroA.modificar_furia(50)
         self.assertEqual(self.guerreroA.furia_restante, 150)
+
         self.guerreroB.modificar_furia_total(-50)
         self.guerreroB.modificar_furia(10)
+
         self.assertEqual(self.guerreroB.furia_restante, 50)
 
     def test_add_fisica(self):
