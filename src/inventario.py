@@ -7,6 +7,6 @@ class Inventario():
         self.peso_maximo = peso_maximo
         self.objetos = []
 
-    def introducir_objetivos(self, Objeto):
-        self.objetos.append(object)
+    def introducir_objeto(self, objeto):
+        self.objetos.append(objeto)
             
