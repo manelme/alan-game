@@ -21,6 +21,7 @@ Objeto <|-- Pocion_mana
 Objeto <|-- Pocion_vida
 
 class Personaje {
+    String nombre
     Number nivel
     Number porcentaje_de_nivel
     Number vida_restante
