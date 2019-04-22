@@ -30,7 +30,11 @@ class Guerrero{
     modificar_furia_total(cantidad)
     add_habilidad(habilidad)
 }
-
+class Habilidad{
+    String nombre
+    String danyo
+    __init__(self, nombre, danyo)
+}
 class Fisica{
     Number coste_furia
     __init__(self, nombre, danyo, coste_furia)
