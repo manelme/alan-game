@@ -1,0 +1,40 @@
+@startuml DiagramaClases
+
+Asesino "1" o--- "0..*" Subterfujio: habilidades >
+
+Personaje <|-- Asesino
+
+Habilidad <|-- Subterfujio
+
+
+
+class Personaje {
+    String nombre
+    Number nivel
+    Number porcentaje_de_nivel
+    Number vida_restante
+    Number vida_total
+    Number elo
+    __init__(self, nombre, vida_total, vida_restante)
+}
+class Asesino{
+    Number energia_total
+    Number energia_restante
+    __init__(self, nombre)
+    atacar(personaje_objetivo, habilidad)
+    modificar_vida(cantidad)
+    modificar_vida_total(cantidad)
+    modificar_energia(cantidad)
+    modificar_energia_total(cantidad)
+    add_habilidad(habilidad)
+}
+class Habilidad{
+    String nombre
+    String danyo
+    __init__(self, nombre, danyo)
+}
+class Subterfujio{
+    Number coste_energia
+    __init__(self, nombre, danyo, coste_energia)
+}
+@enduml

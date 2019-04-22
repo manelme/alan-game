@@ -1,0 +1,39 @@
+@startuml DiagramaClases
+
+
+Guerrero "1" o--- "0..*" Fisica: habilidades >
+
+
+Personaje <|-- Guerrero
+
+
+Habilidad <|-- Fisica
+
+
+class Personaje {
+    String nombre
+    Number nivel
+    Number porcentaje_de_nivel
+    Number vida_restante
+    Number vida_total
+    Number elo
+    __init__(self, nombre, vida_total, vida_restante)
+}
+class Guerrero{
+    Number furia_total
+    Number furia_restante
+    __init__(self, nombre)
+    atacar(personaje_objetivo, habilidad)
+    modificar_vida(cantidad)
+    modificar_vida_total(cantidad)
+    modificar_furia(cantidad)
+    modificar_furia_total(cantidad)
+    add_habilidad(habilidad)
+}
+
+class Fisica{
+    Number coste_furia
+    __init__(self, nombre, danyo, coste_furia)
+}
+
+@enduml
