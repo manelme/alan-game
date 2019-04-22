@@ -15,5 +15,10 @@ class Personaje_test(unittest.TestCase):
         self.assertEqual(self.personajeA.nombre, 'Paco')
         self.assertNotEqual(self.personajeB.nombre, 'Paco')
 
+    def test_comprobar_valores_inicio(self):
+        self.assertEqual(self.personajeA.nivel, 1)
+        self.assertEqual(self.personajeA.porcentaje_de_nivel, 0)
+        self.assertEqual(self.personajeA.elo, 1200)
+
 if __name__ == '__main__':
     unittest.main()
